@@ -1,0 +1,10 @@
+{
+  "trades": 26,
+  "win_rate": 0.6153846153846154,
+  "avg_return": 0.07523276207837208,
+  "median_return": 0.039506556087894884,
+  "total_return_simple": 1.956051814037674,
+  "target_hits": 0,
+  "stop_hits": 0,
+  "data_source": "synthetic"
+}
