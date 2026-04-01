@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-04-01T16:16:25.812961",
+  "hyperopt_run": {
+    "command": [
+      "freqtrade",
+      "hyperopt",
+      "--strategy",
+      "AdaptiveMetaStrategy",
+      "--config",
+      "config/config.json",
+      "--timerange",
+      "20220101-20241231",
+      "--epochs",
+      "50",
+      "--spaces",
+      "buy sell roi stoploss trailing"
+    ],
+    "returncode": 127,
+    "stdout": "",
+    "stderr": "[Errno 2] No such file or directory: 'freqtrade'"
+  }
+}
