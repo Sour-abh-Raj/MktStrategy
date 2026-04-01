@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+
+freqtrade_project/data/*.jsonl
+
+venv/
+logs/*.log
