@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-04-01T16:40:33.752153",
+  "pytest": {
+    "returncode": 0,
+    "stdout": "......                                                                   [100%]\n6 passed in 0.25s\n",
+    "stderr": ""
+  },
+  "internal_backtest": {
+    "total_return": 0.021070029416306202,
+    "sharpe": 0.4754344636929915,
+    "sortino": 1.544414564213199,
+    "max_drawdown": 0.005999999999999955,
+    "profit_factor": 2.9090909090909087,
+    "win_rate": 0.625,
+    "average_trade_return": 0.0026249999999999997,
+    "trade_frequency": 8,
+    "regime_metrics": {
+      "bullish": {
+        "sharpe": 2.906190968595482,
+        "sortino": 0.0,
+        "max_drawdown": 0.0,
+        "profit_factor": 0.025,
+        "win_rate": 1.0
+      },
+      "bearish": {
+        "sharpe": -0.14285714285714285,
+        "sortino": -0.125,
+        "max_drawdown": 0.0040000000000000036,
+        "profit_factor": 0.75,
+        "win_rate": 0.5
+      },
+      "sideways": {
+        "sharpe": 0.5345224838248488,
+        "sortino": 0.6666666666666666,
+        "max_drawdown": 0.0009999999999999475,
+        "profit_factor": 3.0,
+        "win_rate": 0.6666666666666666
+      }
+    }
+  },
+  "paper_trading": {
+    "days": 30,
+    "cycles": 30,
+    "executed_orders": 30,
+    "active_cycles": 30
+  },
+  "freqtrade_backtest": {
+    "command": [
+      "freqtrade",
+      "backtesting",
+      "--strategy",
+      "AdaptiveMetaStrategy",
+      "--strategy-path",
+      "user_data/strategies",
+      "--timerange",
+      "20240101-20241231"
+    ],
+    "returncode": 127,
+    "stdout": "",
+    "stderr": "[Errno 2] No such file or directory: 'freqtrade'"
+  }
+}

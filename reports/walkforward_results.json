@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-04-01T16:16:25.815396",
+  "train_window_days": 180,
+  "test_window_days": 90,
+  "results": [
+    {
+      "window": 1,
+      "train_range": [
+        0,
+        180
+      ],
+      "test_range": [
+        180,
+        270
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 2,
+      "train_range": [
+        90,
+        270
+      ],
+      "test_range": [
+        270,
+        360
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 3,
+      "train_range": [
+        180,
+        360
+      ],
+      "test_range": [
+        360,
+        450
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 4,
+      "train_range": [
+        270,
+        450
+      ],
+      "test_range": [
+        450,
+        540
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 5,
+      "train_range": [
+        360,
+        540
+      ],
+      "test_range": [
+        540,
+        630
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 6,
+      "train_range": [
+        450,
+        630
+      ],
+      "test_range": [
+        630,
+        720
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 7,
+      "train_range": [
+        540,
+        720
+      ],
+      "test_range": [
+        720,
+        810
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 8,
+      "train_range": [
+        630,
+        810
+      ],
+      "test_range": [
+        810,
+        900
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 9,
+      "train_range": [
+        720,
+        900
+      ],
+      "test_range": [
+        900,
+        990
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    },
+    {
+      "window": 10,
+      "train_range": [
+        810,
+        990
+      ],
+      "test_range": [
+        990,
+        1080
+      ],
+      "sharpe": 0.5331139899831832,
+      "sortino": 3.0,
+      "profit_factor": 4.0,
+      "max_drawdown": 0.0009999999999999475,
+      "win_rate": 0.5,
+      "total_return": 0.004502492496502919
+    }
+  ]
+}
