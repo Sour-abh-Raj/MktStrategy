@@ -1,13 +1,46 @@
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+node_modules/
+
+# Python Bytecode
 __pycache__/
 *.pyc
-.pytest_cache/
-.kilo/
-.ruff_cache/
-.venv/
-.env
+*.pyo
+*.pyd
+*$py.class
 
+# IDE Configuration
+.vscode/
+.idea/
 
+# OS Artifacts
+.DS_Store
+Thumbs.db
+
+# Data Formats and Databases
+*.csv
+*.parquet
+*.xlsx
+*.db
+*.sqlite3
 freqtrade_project/data/*.jsonl
 
-venv/
+# Build and Packaging Artifacts
+build/
+dist/
+*.egg-info/
+*.exe
+*.pkg
+*.pyz
+
+# Tests & Caching
+.pytest_cache/
+.ruff_cache/
+.kilo/
 logs/*.log
+
