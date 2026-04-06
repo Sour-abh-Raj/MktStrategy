@@ -1,6 +1,11 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+.kilo/
+.ruff_cache/
+.venv/
+.env
+
 
 freqtrade_project/data/*.jsonl
 
