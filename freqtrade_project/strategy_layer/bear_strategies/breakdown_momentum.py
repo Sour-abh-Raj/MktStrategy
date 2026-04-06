@@ -4,7 +4,9 @@ from dataclasses import dataclass
 from typing import Dict, List
 
 from freqtrade_project.core.indicators import atr, ema, macd_hist, rsi
-from freqtrade_project.strategy_layer.strategy_templates.base_regime_strategy import BaseRegimeStrategy
+from freqtrade_project.strategy_layer.strategy_templates.base_regime_strategy import (
+    BaseRegimeStrategy,
+)
 
 
 @dataclass
@@ -29,7 +31,13 @@ class BearBreakdownMomentumStrategy(BaseRegimeStrategy):
     def __init__(self, config: BearBreakdownConfig | None = None) -> None:
         self.config = config or BearBreakdownConfig()
 
-    def evaluate(self, closes: List[float], highs: List[float], lows: List[float], volumes: List[float]) -> Dict[str, float]:
+    def evaluate(
+        self,
+        closes: List[float],
+        highs: List[float],
+        lows: List[float],
+        volumes: List[float],
+    ) -> Dict[str, float]:
         if len(closes) < 40:
             return {"enter_short": 0.0, "exit_short": 0.0, "atr_stop": 0.0}
 
@@ -39,10 +47,25 @@ class BearBreakdownMomentumStrategy(BaseRegimeStrategy):
         m = macd_hist(closes)[-1]
         a = atr(highs, lows, closes)[-1]
 
-        breakdown = closes[-1] < min(closes[-20:-1])
+        recent_low = (
+            min(closes[-21:-1]) if len(closes) > 20 else min(closes[:-1])
+        )  # Lowest of last 20 closes excluding current
+        breakdown = closes[-1] < recent_low * 0.999  # Break 0.1% below recent support
         sell_volume = volumes[-1] > (sum(volumes[-20:]) / 20) * 1.1
 
-        enter_short = 1.0 if ef < es and r < self.config.rsi_max and m < 0 and breakdown and sell_volume else 0.0
+        enter_short = (
+            1.0
+            if ef < es
+            and r < self.config.rsi_max
+            and m < 0
+            and breakdown
+            and sell_volume
+            else 0.0
+        )
         exit_short = 1.0 if r < 25 or ef > es or m > 0 else 0.0
         atr_stop = closes[-1] + (a * self.config.atr_stop_mult)
-        return {"enter_short": enter_short, "exit_short": exit_short, "atr_stop": atr_stop}
+        return {
+            "enter_short": enter_short,
+            "exit_short": exit_short,
+            "atr_stop": atr_stop,
+        }

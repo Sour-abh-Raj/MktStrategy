@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from typing import Any, Dict
 
+# Import IStrategy with fallback for non-freqtrade environments
 try:
     from freqtrade.strategy import IStrategy  # type: ignore
-except Exception:  # pragma: no cover - local fallback for non-freqtrade envs
-    class IStrategy:  # type: ignore
+except ImportError:
+    # Define minimal interface for development/testing
+    class IStrategy:  # type: ignore[no-redef]
         minimal_roi: Dict[str, float] = {}
         stoploss: float = -0.1
         timeframe: str = "15m"

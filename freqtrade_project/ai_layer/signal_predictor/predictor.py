@@ -9,13 +9,16 @@ class AISignalPredictor:
     """AI confirmation layer outputting direction probability and confidence flags."""
 
     def __init__(self, model: SimpleLinearModel | None = None) -> None:
-        self.model = model or SimpleLinearModel(weights={"momentum_score": 1.2, "macd_hist": 0.8, "volatility": -1.0})
+        self.model = model or SimpleLinearModel(
+            weights={"momentum_score": 1.2, "macd_hist": 0.8, "volatility": -1.0}
+        )
 
     def predict(self, features: Dict[str, float]) -> Dict[str, float]:
         score = self.model.predict_score(features)
         p_up = 1 / (1 + (2.71828 ** (-score)))
         trend_strength = min(max(abs(features.get("ma_gap", 0.0)) * 200, 0.0), 1.0)
-        vol_shift = features.get("volatility", 0.02) - features.get("volatility_baseline", 0.02)
+        # Use current volatility as baseline since we don't have historical baseline
+        vol_shift = features.get("volatility", 0.02) - 0.02  # Default baseline
         confirm_long = 1.0 if p_up >= 0.55 and trend_strength >= 0.2 else 0.0
         confirm_short = 1.0 if p_up <= 0.45 and trend_strength >= 0.2 else 0.0
         return {
