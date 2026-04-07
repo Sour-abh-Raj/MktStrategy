@@ -1,0 +1,126 @@
+# Strategy Configuration
+# Dynamically loaded strategy registrations
+
+strategies:
+  # Bullish strategies
+  - strategy_id: bull_trend_breakout
+    regime: bullish
+    description: "Trend breakout strategy for bullish markets"
+    parameters:
+      ema_fast: 12
+      ema_slow: 26
+      rsi_period: 14
+      stop_loss: 0.05
+    enabled: true
+
+  - strategy_id: bull_ema_crossover
+    regime: bullish
+    description: "EMA crossover for bull markets"
+    parameters:
+      ema_fast: 9
+      ema_slow: 21
+      macd_fast: 12
+      macd_slow: 26
+      stop_loss: 0.04
+    enabled: true
+
+  - strategy_id: bull_momentum
+    regime: bullish
+    description: "Momentum-based bullish strategy"
+    parameters:
+      rsi_period: 14
+      rsi_entry: 40
+      stoch_period: 14
+      stop_loss: 0.06
+    enabled: false
+
+  # Bearish strategies
+  - strategy_id: bear_breakdown_momentum
+    regime: bearish
+    description: "Momentum breakdown for bear markets"
+    parameters:
+      ema_fast: 12
+      ema_slow: 26
+      rsi_period: 14
+      stop_loss: 0.05
+    enabled: true
+
+  - strategy_id: bear_ma_cross
+    regime: bearish
+    description: "Moving average cross for shorts"
+    parameters:
+      ema_fast: 9
+      ema_slow: 21
+      stop_loss: 0.04
+    enabled: false
+
+  # Sideways strategies
+  - strategy_id: sideways_bb_mean_reversion
+    regime: sideways
+    description: "Bollinger Band mean reversion"
+    parameters:
+      bb_period: 20
+      bb_std: 2.0
+      rsi_period: 14
+      rsi_oversold: 30
+      rsi_overbought: 70
+      stop_loss: 0.03
+    enabled: true
+
+  - strategy_id: sideways_range_trade
+    regime: sideways
+    description: "Range trading strategy"
+    parameters:
+      high_band: 0.75
+      low_band: 0.25
+      stop_loss: 0.02
+    enabled: false
+
+  # High volatility strategies
+  - strategy_id: vol_options_strategies_gen_1
+    regime: high_volatility
+    description: "High volatility breakout"
+    parameters:
+      atr_multiplier: 2.0
+      stop_loss: 0.08
+      take_profit: 0.15
+    enabled: true
+
+  - strategy_id: vol_volatility_expansion
+    regime: high_volatility
+    description: "Volatility expansion strategy"
+    parameters:
+      atr_period: 14
+      atr_threshold: 1.5
+      stop_loss: 0.10
+    enabled: false
+
+  # Low volatility strategies
+  - strategy_id: carry_trend_following_gen_1
+    regime: low_volatility
+    description: "Low volatility trend following"
+    parameters:
+      ema_fast: 21
+      ema_slow: 50
+      adx_threshold: 25
+      stop_loss: 0.03
+    enabled: true
+
+  - strategy_id: low_vol_squeeze
+    regime: low_volatility
+    description: "Bollinger squeeze breakout"
+    parameters:
+      bb_period: 20
+      bb_std: 1.5
+      breakout_threshold: 0.02
+      stop_loss: 0.04
+    enabled: false
+
+# Default settings
+defaults:
+  min_trades_for_ranking: 20
+  min_sharpe: 0.5
+  max_drawdown_limit: 0.25
+  default_stop_loss: 0.05
+  default_take_profit: 0.10
+  default_position_size: 0.10

@@ -1,0 +1,15 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\soura\AppData\Local\Python\pythoncore-3.11-64\python.exe
+cachedir: .pytest_cache
+rootdir: c:\Users\soura\Documents\Projects\MktStrategy
+plugins: anyio-4.12.1
+collecting ... collected 6 items
+
+freqtrade_project/tests/test_pipeline_smoke.py::test_adaptive_system_cycle_smoke PASSED [ 16%]
+freqtrade_project/tests/test_pipeline_smoke.py::test_paper_plan_range PASSED [ 33%]
+freqtrade_project/tests/test_pipeline_smoke.py::test_walk_forward_and_performance PASSED [ 50%]
+freqtrade_project/tests/test_pipeline_smoke.py::test_ai_retrainer_schedule_due PASSED [ 66%]
+freqtrade_project/tests/test_strategies_and_risk.py::test_strategy_signal_interfaces PASSED [ 83%]
+freqtrade_project/tests/test_strategies_and_risk.py::test_risk_controllers_and_paper_pipeline PASSED [100%]
+
+============================== 6 passed in 0.10s ==============================

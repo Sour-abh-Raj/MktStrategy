@@ -1,0 +1,8 @@
+adx_trend: 22
+ma_slope_bull: 0.0
+ma_slope_bear: 0.0
+vol_high: 0.04
+vol_low: 0.015
+momentum_strong: 0.6
+momentum_reversal: -0.5
+liquidity_high: 1.1

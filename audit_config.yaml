@@ -1,0 +1,35 @@
+# Adaptive Trading System - Audit Configuration
+
+project:
+  name: "MktStrategy System Audit"
+  environment: "staging"
+
+data:
+  # To avoid downloading 5 years of real tick data and hitting API issues,
+  # the audit will use a synthetic data generator that simulates Binance
+  # historical data with equivalent volume and volatility profiles.
+  use_synthetic: false
+  timeframe: "1d"
+  years: 1
+  seed: 42
+  pairs:
+    - "BTC/USDT"
+    - "ETH/USDT"
+
+backtest:
+  starting_balance: 10000
+  fee: 0.001
+  slippage: 0.0005
+  look_back_windows: [30, 60, 90]
+  # Number of different market segments to test
+  segments: 5
+
+real_time:
+  simulation_duration_seconds: 30
+  packet_loss_probability: 0.05
+  mean_latency_ms: 100
+  adaptation_target_window_ms: 2000
+
+logging:
+  report_output: "audit_report.md"
+  dashboard_output: "dashboard.html"
